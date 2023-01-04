@@ -122,6 +122,7 @@ public class Bunker : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Invader")) {
             gameObject.SetActive(false);
         }
+        GetComponent<AudioSource>().Play();
     }
 
 }

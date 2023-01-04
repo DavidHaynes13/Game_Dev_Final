@@ -88,6 +88,7 @@ public sealed class GameManager : MonoBehaviour
 
     private void OnPlayerKilled()
     {
+         GetComponent<AudioSource>().Play();
         SetLives(lives - 1);
 
         player.gameObject.SetActive(false);
@@ -101,6 +102,7 @@ public sealed class GameManager : MonoBehaviour
 
     private void OnInvaderKilled(Invader invader)
     {
+        GetComponent<AudioSource>().Play();
         SetScore(score + invader.score);
 
         if (invaders.AmountKilled == invaders.TotalAmount) {
@@ -110,6 +112,7 @@ public sealed class GameManager : MonoBehaviour
 
     private void OnMysteryShipKilled(MysteryShip mysteryShip)
     {
+         GetComponent<AudioSource>().Play();
         SetScore(score + mysteryShip.score);
     }
 

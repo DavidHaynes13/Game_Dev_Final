@@ -36,8 +36,10 @@ public class Invader : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser")) {
+              GetComponent<AudioSource>().Play();
             killed?.Invoke(this);
         }
+      
     }
 
 }
